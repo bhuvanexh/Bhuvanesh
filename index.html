@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="spHide">HOME</a> </li>
+                <li><a href="#aboutMe">About Me</a> </li>
+                <li><a href="#skills">Skills</a> </li>
+                <li><a href="#projects">Projects</a> </li>
+                <li><a href="#education">Education</a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="top" id="home">
+
+            <div class="intro">
+                <h1>
+                    Hi , i am <br> <span>BHUVANESH</span> <br> <span>CHOUDHARY</span>
+
+                </h1>
+            </div>
+            <div class="MElon">
+                <!-- <img src="./images/MElon.png" alt=""> -->
+                <div class="eye1 eye"></div>
+                <div class="eye2 eye"></div>
+            </div>
+        </div>
+        <div class="mid">
+            <div class="aboutMe" id="aboutMe">
+                <div class="aboutMeImg"></div>
+                <div class="aboutMePara">
+                    I am an 3rd year Computer Science Engineering Student , with huge interest in learning and exploring
+                    more and more about different programming fields Specially Web Development.
+                </div>
+            </div>
+
+
+
+
+            <div class="skills" id="skills">
+                <div class="skillsInner">
+
+                    <div class="skillsText">
+                        I've learnt Most of my skills from Online Education and Internet resources.
+
+                    </div>
+                    <div class="percentage">
+                        <div class="percentageNav">
+                            <ul class="perNavLinks">
+                                <li class="frontA active">Frontend</li>
+                                <li class="backA">Backend</li>
+                                <li class="moreA">More</li>
+                            </ul>
+                        </div>
+                        <div class="percentageBars frontend">
+
+                            <div class="first HTML">
+                                <div class="sec">
+                                </div>
+                                <div class="third">HTML</div>
+                            </div>
+                            <div class="first CSS">
+                                <div class="sec">
+                                </div>
+                                <div class="third">CSS</div>
+                            </div>
+                            <div class="first JS">
+                                <div class="sec">
+                                </div>
+                                <div class="third">Java <br> Script</div>
+                            </div>
+                        </div>
+                        <div class="percentageBars backend hide">
+
+                            <div class="first node">
+                                <div class="sec">
+                                </div>
+                                <div class="third">Node & <br> Express</div>
+                            </div>
+                            <div class="first API">
+                                <div class="sec">
+                                </div>
+                                <div class="third">APIs & <br> MongoDB</div>
+                            </div>
+                            <div class="first authentication">
+                                <div class="sec">
+                                </div>
+                                <div class="third">Authentication & <br> Authorization</div>
+                            </div>
+                        </div>
+                        <div class="percentageBars more hide">
+
+                            <div class="first DSA">
+                                <div class="sec">
+                                </div>
+                                <div class="third">DSA <br> cpp </div>
+                            </div>
+                            <div class="first photoshop">
+                                <div class="sec">
+                                </div>
+                                <div class="third">Photoshop</div>
+                            </div>
+                            <div class="first premiere">
+                                <div class="sec">
+                                </div>
+                                <div class="third">Premiere Pro & <br>
+                                    After Effects</div>
+                            </div>
+                            <div class="first appetite">
+                                <div class="sec">
+                                </div>
+                                <div class="third">Appetite for <br> Knowledge</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hireMe">
+
+                </div>
+            </div>
+            <div class="projects" id="projects">
+                <div class="projectsText">
+                    Here are some of the Projects i made
+                </div>
+                <!-- <div class="sliderMain"> -->
+
+                <div class="slider">
+                    <section class="carousel" aria-label="Gallery">
+                        <ol class="carousel__viewport">
+                            <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+                                <div class="carousel__snapper"><img src="./images/Screenshot 2023-02-04 203015.png"
+                                        alt="">
+                                    <div class="projAbout"><span>Rock , Paper & Scissors Mini Game</span>
+                                        <p>Mini Game Responsive and adaptable to all devices , with animated
+                                            interactions</p> <span class="gitAnchors"> <a
+                                                href="https://bhuvanexh.github.io/rock-paper-scissors/">Demo</a><a
+                                                href="https://github.com/bhuvanexh/rock-paper-scissors">Source Code
+                                            </a></span>
+                                    </div>
+                                </div>
+                                <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
+                                <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
+                            </li>
+                            <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                                <div class="carousel__snapper"><img src="./images/yelpcamp.png" alt="">
+                                    <div class="projAbout"><span>YelpCamp , complete Dynamic website</span>
+                                        <p>A dynamic website with database , user registration , authentication ,
+                                            authorization & basic Security features (a project from Udemy Colt Steele
+                                            web
+                                            dev. Bootcamp)</p> <span class="gitAnchors"><a
+                                                href="https://github.com/bhuvanexh/yelpCamp">Source Code
+                                            </a></span>
+                                    </div>
+                                </div>
+                                <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
+                                <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
+                            </li>
+                            <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+                                <div class="carousel__snapper"><img src="./images/url-shortener.png" alt="">
+                                    <div class="projAbout"><span>URL Shortening Website</span>
+                                        <p>URL Shortening using API , a Responsive website with some features</p> <span
+                                            class="gitAnchors"><a
+                                                href="https://bhuvanexh.github.io/url-shortener/">Demo</a><a
+                                                href="https://github.com/bhuvanexh/url-shortener">Source Code
+                                            </a></span>
+                                    </div>
+                                </div>
+                                <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
+                                <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
+                            </li>
+                            <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+                                <div class="carousel__snapper"><img src="./images/space.png" alt="">
+                                    <div class="projAbout"><span>Space Tour Website</span>
+                                        <p>Multi page space tour webiste with lots interactive elements and Responsive
+                                            design</p> <span class="gitAnchors"><a href="">Source Code
+                                            </a></span>
+                                    </div>
+                                </div>
+                                <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
+                                <a href="#carousel__slide5" class="carousel__next">Go to next slide</a>
+                            </li>
+                            <li id="carousel__slide5" tabindex="0" class="carousel__slide">
+                                <div class="carousel__snapper"><img src="./images/tip-calculator.png" alt="">
+                                    <div class="projAbout"><span>Tip Calculator</span>
+                                        <p>A Tip Calculator App</p> <span class="gitAnchors"><a
+                                                href="https://bhuvanexh.github.io/tip-calculator/">Demo</a><a
+                                                href="https://github.com/bhuvanexh/tip-calculator">Source Code
+                                            </a></span>
+                                    </div>
+                                </div>
+                                <a href="#carousel__slide4" class="carousel__prev">Go to previous slide</a>
+                                <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
+                            </li>
+                        </ol>
+                        <!-- <aside class="carousel__navigation">
+                            <ol class="carousel__navigation-list">
+                                <li class="carousel__navigation-item">
+                                    <a href="#carousel__slide1" class="carousel__navigation-button">Go to slide 1</a>
+                                </li>
+                                <li class="carousel__navigation-item">
+                                    <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
+                                </li>
+                                <li class="carousel__navigation-item">
+                                    <a href="#carousel__slide3" class="carousel__navigation-button">Go to slide 3</a>
+                                </li>
+                                <li class="carousel__navigation-item">
+                                    <a href="#carousel__slide4" class="carousel__navigation-button">Go to slide 4</a>
+                                </li>
+                            </ol>
+                        </aside> -->
+                    </section>
+                </div>
+                <!-- </div> -->
+            </div>
+
+        </div>
+        <div class="education" id="education">
+            <div class="eduText">
+                <p>
+                    ..to know more about my Educational Background , please consider downloading the CV attatched.
+                </p>
+            </div>
+            <div class="cvButton">
+                <button>
+                    <span>DOWNLOAD CV</span>
+                </button>
+            </div>
+        </div>
+
+
+
+    </main>
+    <footer>
+        <div class="footerUpper">
+            <div class="socials">
+                Socials <span><a href="">git</a> <a href="">link</a></span>
+            </div>
+            <div class="email">
+                Contact Me: <span>bhuvaneshcho7@gmail.com</span>
+            </div>
+        </div>
+        <div class="footerBottom">
+            Portfolio made by <a href="">Bhuvanesh Choudhary</a>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
+<!-- background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+background: rgb(34,31,37);
+background: linear-gradient(90deg, rgba(34,31,37,1) 0%, rgba(89,41,134,1) 39%, rgba(174,104,191,1) 93%); -->
