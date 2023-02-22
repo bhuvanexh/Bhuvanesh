@@ -1,6 +1,11 @@
+const BGI = document.querySelectorAll('.BGI')
+
+
 const eye1 = document.querySelector('.eye1');
 const eye2 = document.querySelector('.eye2');
 window.addEventListener('mousemove', (e) => {
+
+
 
     let mx = e.x - (window.innerWidth * .7);
     let my = e.y - (window.innerHeight * .35);
@@ -10,6 +15,11 @@ window.addEventListener('mousemove', (e) => {
     eye2.style.transform = `translate(${ex}px , ${ey}px)`
 
     // console.log(e.x, e.y)
+
+    for (let i = 0; i < BGI.length; i++) {
+        BGI[i].style.transform = `rotate(${((-1) ** i) * (i * 5) + ex}deg)`
+
+    }
 })
 
 
@@ -47,4 +57,33 @@ moreA.addEventListener('click', () => {
     more.classList.remove('hide')
     backend.classList.add('hide')
     frontend.classList.add('hide')
+})
+
+
+const toggle = document.querySelectorAll('.scrollToggle');
+const svgs = document.querySelectorAll('.frontSvg');
+
+
+window.addEventListener('scroll', () => {
+    const limit = window.innerHeight / 1.2;
+    toggle.forEach(tog => {
+        const top = tog.getBoundingClientRect().top;
+
+        if (top < limit) {
+            tog.classList.add('show')
+
+        } else {
+            tog.classList.remove('show')
+
+        }
+        if (toggle[1].classList.contains('show')) {
+            svgs.forEach(svg => {
+                svg.classList.add('mojFirst')
+            })
+        } else {
+            svgs.forEach(svg => {
+                svg.classList.remove('mojFirst')
+            })
+        }
+    })
 })

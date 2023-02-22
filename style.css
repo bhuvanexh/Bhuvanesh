@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&display=swap');
 
+
+html {
+    scroll-behavior: smooth
+}
+
 *::after,
 *::before,
 * {
@@ -45,6 +50,7 @@ body {
 
 body {
     background: linear-gradient(to bottom, #000000, #120a57, #672626);
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -62,11 +68,24 @@ nav {
 
 .nav-links {
     color: white;
+    min-height: 50px;
     width: 100%;
     display: flex;
-    gap: 1em;
+    /* gap: 1em; */
     padding-block: .75em;
     justify-content: space-around;
+}
+
+.nav-links li {
+    text-align: center;
+    width: 74px;
+}
+
+.nav-links a:hover {
+    /* outline: 1px solid blueviolet; */
+    background-color: rgba(103, 103, 236, 0.278);
+    font-size: 1.2em;
+    /* color: rgba(55, 70, 237, 0.89); */
 }
 
 /* Top */
@@ -76,6 +95,81 @@ nav {
     width: 100%;
     position: relative;
 }
+
+.strip {
+    position: absolute;
+    width: 60%;
+    aspect-ratio: 1;
+    left: 32%;
+    top: -10%;
+    z-index: -11;
+    opacity: .5;
+    transform: rotate(45deg);
+    /* top: -13%; */
+    background: linear-gradient(to bottom, #b4b403c7, #097f48ce, #053446);
+}
+
+.BGI {
+    position: absolute;
+    aspect-ratio: 1;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: .5;
+    /* filter: drop-shadow(0 0 0.1rem rgba(81, 255, 255, 0.694)); */
+}
+
+.BGI1 {
+
+    left: 50%;
+    transform: rotate(10deg);
+    background-image: url(./images/html.png);
+}
+
+.BGI2 {
+
+    top: -5%;
+    left: 0%;
+    transform: rotate(-10deg);
+    background-image: url(./images/css.png);
+}
+
+.BGI3 {
+    top: 40%;
+    right: 7%;
+    transform: rotate(-50deg);
+    background-image: url(./images/JS.png);
+}
+
+.BGI4 {
+    top: 65%;
+    right: 40%;
+    transform: rotate(30deg);
+    background-image: url(./images/node.png);
+}
+
+.BGI5 {
+    bottom: -10%;
+    left: 12%;
+    transform: rotate(15deg);
+
+    background-image: url(./images/photoshop.png);
+}
+
+.BGI6 {
+    top: 48%;
+    right: 15%;
+    transform: rotate(-15deg);
+    background-image: url(./images/premiere.png);
+}
+
+.BGI7 {
+    top: -15%;
+    left: 2%;
+    transform: rotate(-25deg);
+    background-image: url(./images/after.png);
+}
+
 
 .intro {
     position: absolute;
@@ -88,9 +182,13 @@ nav {
 }
 
 .intro h1 {
+    position: relative;
+    right: 120%;
     font-size: 4.5em;
     line-height: 1.4em;
     color: aliceblue;
+    animation: musk 1s ease-in .5s 1 forwards;
+
 }
 
 .intro span {
@@ -106,11 +204,20 @@ nav {
 .MElon {
     width: 768px;
     position: absolute;
-    right: 0%;
+    right: -90%;
     height: 40rem;
     border-radius: 10% 10% 50% 30%;
     background-image: url(./images/MElon.png);
     background-size: cover;
+    animation: musk 1s ease-in .5s 1 forwards;
+}
+
+@keyframes musk {
+    from {}
+
+    to {
+        right: 0%;
+    }
 }
 
 .MElon::before {
@@ -158,7 +265,10 @@ nav {
 }
 
 .aboutMe {
-    padding-top: 5em;
+    position: relative;
+    left: -100%;
+    transition: left .5s ease-in-out;
+    /* padding-top: 5em; */
     display: flex;
     height: 40rem;
     align-items: center;
@@ -167,8 +277,12 @@ nav {
 
 .aboutMePara {
     width: 35rem;
-    /* width: 40%; */
-    color: rgb(253, 231, 231);
+    /* color: rgb(253, 231, 231); */
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: .05em;
+
     font-size: 2.3em;
     margin-right: 2em;
 }
@@ -179,10 +293,12 @@ nav {
     background-image: url(./images/deskMan.png);
     background-size: contain;
     background-repeat: no-repeat;
-    /* opacity: .; */
 }
 
 .skills {
+    position: relative;
+    left: -100%;
+    transition: left .5s ease-in-out;
     margin-top: 1em;
     width: 100%;
     height: 40rem;
@@ -204,7 +320,11 @@ nav {
 
 .skillsText {
     width: 28rem;
-    color: rgb(253, 231, 231);
+    /* color: rgb(235, 235, 235); */
+    color: white;
+    letter-spacing: .05em;
+    font-style: italic;
+    font-weight: 500;
     font-size: 2.6em;
 }
 
@@ -243,32 +363,61 @@ nav {
     place-items: center;
 }
 
-.first {
-    width: 150px;
-    height: 150px;
-    background-color: rgb(0, 0, 0);
-    display: grid;
-    border-radius: 50%;
-    place-items: center;
+.svgOuter {
     position: relative;
+    border-radius: 50%;
 }
 
-.sec {
-    width: 160px;
-    height: 160px;
+.svgText {
     position: absolute;
-    z-index: -1;
-    border-radius: 50%;
     display: grid;
     place-items: center;
-}
-
-.third {
+    inset: 0;
+    z-index: 1;
     color: white;
     font-size: 2em;
     text-align: center;
-
 }
+
+.svg {
+    width: 200px;
+    aspect-ratio: 1;
+    display: inline-block;
+    stroke: rgb(195, 255, 75);
+    stroke-width: 4px;
+    fill: #000000;
+    /* filter: drop-shadow(5px 2px 3px #a40273); */
+    stroke-dasharray: 2px 700px;
+    transform: rotate(-90deg);
+    /* stroke-dashoffset: 100px; */
+    animation: moj 2s ease-in-out .3s 1 forwards;
+    /* animation: 3s linear 1s moj; */
+}
+
+.mojFirst {
+    animation: moj2 2.3s ease-in-out .3s 1 forwards;
+}
+
+@keyframes moj {
+    from {
+        stroke-dasharray: 2px 700px;
+    }
+
+    to {
+        stroke-dasharray: var(--num) 700px;
+    }
+}
+
+@keyframes moj2 {
+    from {
+        stroke-dasharray: 2px 700px;
+    }
+
+    to {
+        stroke-dasharray: var(--num) 700px;
+    }
+}
+
 
 .JS,
 .authentication {
@@ -276,65 +425,23 @@ nav {
     justify-self: center;
 }
 
-.JS .sec {
-    background: conic-gradient(rgb(0, 46, 197) 80%, rgba(3, 2, 30, 0.662) 80% 100%);
-}
-
-.CSS .sec {
-    background: conic-gradient(rgb(0, 46, 197) 85%, rgba(3, 2, 30, 0.662) 85% 100%);
-}
-
-.HTML .sec {
-    background: conic-gradient(rgb(0, 46, 197) 90%, rgba(3, 2, 30, 0.662) 90% 100%);
-}
-
-.node .third,
-.API .third,
-.DSA .third,
-.photoshop .third {
+.JS .svgText,
+.node .svgText,
+.API .svgText,
+.DSA .svgText,
+.photoshop .svgText {
     font-size: 1.7em;
 }
 
-.authentication .third,
-.premiere .third {
-    font-size: 1.2em;
+.authentication .svgText,
+.premiere .svgText {
+    font-size: 1.4em;
 }
 
-.appetite .third {
+.appetite .svgText {
     font-size: 1.4em;
 
 }
-
-.node .sec {
-    background: conic-gradient(rgb(0, 46, 197) 62%, rgba(3, 2, 30, 0.662) 62% 100%);
-}
-
-.API .sec {
-    background: conic-gradient(rgb(0, 46, 197) 72%, rgba(3, 2, 30, 0.662) 72% 100%);
-}
-
-.authentication .sec {
-    background: conic-gradient(rgb(0, 46, 197) 58%, rgba(3, 2, 30, 0.662) 58% 100%);
-}
-
-.DSA .sec {
-    background: conic-gradient(rgb(0, 46, 197) 55%, rgba(3, 2, 30, 0.662) 55% 100%);
-}
-
-.photoshop .sec {
-    background: conic-gradient(rgb(0, 46, 197) 69%, rgba(3, 2, 30, 0.662) 69% 100%);
-}
-
-.premiere .sec {
-    background: conic-gradient(rgb(0, 46, 197) 70%, rgba(3, 2, 30, 0.662) 70% 100%);
-}
-
-
-
-.appetite .sec {
-    background: conic-gradient(rgb(0, 46, 197) 99.9%, rgba(3, 2, 30, 0.662) 99.9% 100%);
-}
-
 
 
 
@@ -348,10 +455,16 @@ nav {
     background-image: url(./images/hireMe2.png);
 }
 
-
+.projectsShell,
+.skillsShell,
+.aboutMeShell {
+    position: relative;
+}
 
 .projects {
     position: relative;
+    left: -100%;
+    transition: left .5s ease-in-out;
     width: 100%;
     height: 40rem;
 }
@@ -360,7 +473,9 @@ nav {
     position: relative;
     top: 10rem;
     left: 2.5rem;
-    color: white;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    font-weight: 500;
     font-size: 3em;
     width: 25rem;
 
@@ -369,66 +484,13 @@ nav {
 
 .slider {
     position: absolute;
-    /* max-width: 50rem; */
+
     padding: 0 1.25rem;
     top: 5%;
     right: 10%;
-    /* left: 35%; */
+
 }
 
-/* @keyframes tonext {
-    75% {
-        left: 0;
-    }
-
-    95% {
-        left: 100%;
-    }
-
-    98% {
-        left: 100%;
-    }
-
-    99% {
-        left: 0;
-    }
-}
-
-@keyframes tostart {
-    75% {
-        left: 0;
-    }
-
-    95% {
-        left: -300%;
-    }
-
-    98% {
-        left: -300%;
-    }
-
-    99% {
-        left: 0;
-    }
-} */
-
-/* @keyframes snap {
-    96% {
-        scroll-snap-align: center;
-    }
-
-    97% {
-        scroll-snap-align: none;
-    }
-
-    99% {
-        scroll-snap-align: none;
-    }
-
-    100% {
-        scroll-snap-align: center;
-    }
-} */
 
 
 
@@ -465,7 +527,7 @@ li {
 }
 
 .carousel {
-    /* padding-top: 75%; */
+
     width: 50rem;
     height: 37.5rem;
     filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.537));
@@ -659,7 +721,10 @@ li {
     padding: .5em 1em;
 }
 
-
+.downloadBtn:hover {
+    cursor: pointer;
+    color: rgb(42, 122, 250);
+}
 
 footer {
     width: 100%;
@@ -677,12 +742,52 @@ footer {
 
 .footerUpper {
     display: flex;
-    gap: 1em;
+    gap: 1.5em;
+}
+
+.footerBottom {
+    font-size: .9em;
+    color: rgba(135, 233, 235, 0.678);
+}
+
+.socials {
+    display: flex;
+    align-items: flex-start;
+    gap: .5em;
 }
 
 
 
+.github {
+    background-image: url(./images/git.png);
+    display: inline-block;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.linkedin {
+    background-image: url(./images/link.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    /* background-color: #fff; */
+    width: 30px;
+    aspect-ratio: 1;
+}
+
 @media(max-width:1400px) {
+    .BGI {
+        width: 280px;
+    }
+
+    .strip {
+        top: -3%;
+    }
+
     .intro h1 {
         font-size: 4em;
 
@@ -708,6 +813,14 @@ footer {
 }
 
 @media(max-width:1300px) {
+    .BGI {
+        width: 275px;
+    }
+
+    .strip {
+        top: -4%;
+    }
+
     .intro h1 {
         font-size: 3.2em;
 
@@ -751,6 +864,14 @@ footer {
 }
 
 @media(max-width:1175px) {
+    .BGI {
+        width: 240px;
+    }
+
+    .strip {
+        top: 0%;
+    }
+
     .MElon {
         width: 568px;
     }
@@ -797,14 +918,26 @@ footer {
         font-size: 2em;
     }
 
-    .first {
-        width: 120px;
-        height: 120px;
+    .svg {
+        width: 150px;
     }
 
-    .sec {
-        width: 130px;
-        height: 130px;
+    .JS .svgText,
+    .node .svgText,
+    .API .svgText,
+    .DSA .svgText,
+    .photoshop .svgText {
+        font-size: 1.5em;
+    }
+
+    .authentication .svgText,
+    .premiere .svgText {
+        font-size: 1.2em;
+    }
+
+    .appetite .svgText {
+        font-size: 1.4em;
+
     }
 
     .projects {
@@ -832,6 +965,8 @@ footer {
         padding: .5em 1em;
     }
 
+
+
     .education {
         height: 15rem;
         gap: 3em;
@@ -844,6 +979,49 @@ footer {
 }
 
 @media(max-width:1000px) {
+    .BGI {
+        width: 210px;
+    }
+
+    .BGI1 {
+        width: 190px;
+        top: 2%;
+        left: 40%;
+    }
+
+    .BGI3 {
+        width: 220px;
+        top: 50%;
+        right: 2%;
+    }
+
+    .BGI4 {
+        width: 190px;
+        top: 75%;
+        right: 38%;
+    }
+
+    .BGI5 {
+        bottom: -10%;
+        left: 12%;
+    }
+
+    .BGI6 {
+        top: 54%;
+        right: 22%;
+    }
+
+    .BGI7 {
+        top: -15%;
+        left: 2%;
+        transform: rotate(-25deg);
+        background-image: url(./images/after.png);
+    }
+
+    .strip {
+        left: 30%;
+    }
+
     .top {
         height: 30rem;
     }
@@ -897,14 +1075,17 @@ footer {
         width: 28rem;
     }
 
-    .first {
-        width: 130px;
-        height: 130px;
+    .svg {
+        width: 140px;
     }
 
-    .sec {
-        width: 140px;
-        height: 140px;
+    .authentication .svgText,
+    .premiere .svgText {
+        font-size: 1.1em;
+    }
+
+    .JS .svgText {
+        font-size: 1.3em;
     }
 
     .carousel {
@@ -946,7 +1127,52 @@ footer {
 }
 
 @media(max-width:800px) {
+    .BGI {
+        width: 180px;
+    }
 
+    .BGI1 {
+
+        left: 50%;
+    }
+
+    .BGI2 {
+
+        top: -5%;
+        left: 0%;
+
+    }
+
+    .BGI3 {
+        top: 40%;
+        right: 0%;
+    }
+
+    .BGI4 {
+        top: 80%;
+        right: 30%;
+    }
+
+    .BGI5 {
+        top: 0%;
+        left: 80%;
+    }
+
+    .BGI6 {
+        top: 58%;
+        right: 25%;
+    }
+
+
+    .BGI7 {
+        left: 5%;
+
+    }
+
+    .strip {
+        top: 2%;
+        left: 28%;
+    }
 
     .intro h1 {
         font-size: 2.2em;
@@ -1006,14 +1232,9 @@ footer {
         width: 24rem;
     }
 
-    .first {
-        width: 100px;
-        height: 100px;
-    }
 
-    .sec {
-        width: 110px;
-        height: 110px;
+    .JS .svgText {
+        font-size: 1.2em;
     }
 
     .hireMe {
@@ -1044,32 +1265,67 @@ footer {
 
     }
 
-    .third {
+    .svgText {
         font-size: 1.5em;
     }
 
-    .node .third,
-    .API .third,
-    .DSA .third,
-    .photoshop .third {
+    .node .svgText,
+    .API .svgText,
+    .DSA .svgText,
+    .photoshop .svgText {
+        font-size: 1.3em;
+    }
+
+    .authentication .svgText,
+    .premiere .svgText {
+        font-size: 1em;
+    }
+
+    .appetite .svgText {
         font-size: 1.2em;
     }
-
-    .authentication .third,
-    .premiere .third {
-        font-size: .9em;
-    }
-
-    .appetite .third {
-        font-size: 1.2em;
-
-    }
-
-
-
 }
 
 @media(max-width:650px) {
+    .BGI {
+        width: 160px;
+    }
+
+    .BGI1 {
+
+        left: 2%;
+    }
+
+    .BGI4 {
+        top: 90%;
+        right: 10%;
+    }
+
+    .BGI5 {
+        top: -3%;
+        left: 76%;
+    }
+
+    .BGI6 {
+        top: 58%;
+        right: 5%;
+        transform: rotate(-15deg);
+        background-image: url(./images/premiere.png);
+    }
+
+    .BGI7 {
+        top: -15%;
+        left: 0;
+        transform: rotate(-25deg);
+        background-image: url(./images/after.png);
+    }
+
+    .strip {
+        top: 4%;
+        left: 32%;
+        width: 50%;
+    }
+
     .spHide {
         display: none;
     }
@@ -1085,6 +1341,10 @@ footer {
 
     .nav-links li {
         margin-right: 3em;
+    }
+
+    .nav-links li:nth-of-type(1) {
+        width: 0;
     }
 
     .nav-links li:nth-of-type(1),
@@ -1156,16 +1416,6 @@ footer {
         width: 24rem;
     }
 
-    .first {
-        width: 100px;
-        height: 100px;
-    }
-
-    .sec {
-        width: 110px;
-        height: 110px;
-    }
-
     .hireMe {
         display: none;
         width: 16rem;
@@ -1212,6 +1462,36 @@ footer {
 }
 
 @media(max-width:500px) {
+    .BGI {
+        width: 120px;
+    }
+
+    .BGI3 {
+        top: 25%;
+    }
+
+    .BGI4 {
+        top: 95%;
+        right: 2%;
+    }
+
+    .BGI6 {
+        top: 65%;
+    }
+
+    .BGI7 {
+        top: -25%;
+        left: 1%;
+    }
+
+    .strip {
+        width: 80%;
+        top: -18%;
+        left: 4%;
+        transform: rotate(55deg);
+        aspect-ratio: 3/7;
+    }
+
     .nav-links li {
         margin-right: 2.5em;
     }
@@ -1248,15 +1528,6 @@ footer {
         width: 21rem;
     }
 
-    .first {
-        width: 90px;
-        height: 90px;
-    }
-
-    .sec {
-        width: 100px;
-        height: 100px;
-    }
 
     .projects {
         height: 28rem;
@@ -1314,30 +1585,22 @@ footer {
         font-size: .9em;
     }
 
-    .third {
-        font-size: 1.3em;
-    }
-
-    .node .third,
-    .API .third,
-    .DSA .third,
-    .photoshop .third {
-        font-size: 1em;
-    }
-
-    .authentication .third,
-    .premiere .third {
-        font-size: .8em;
-    }
-
-    .appetite .third {
-        font-size: .9em;
-
-    }
 
 }
 
 @media(max-width:350px) {
+    .BGI {
+        width: 100px;
+    }
+
+    .strip {
+        width: 75%;
+        top: -8%;
+        left: 11%;
+        transform: rotate(55deg);
+        aspect-ratio: 3/7;
+    }
+
     .nav-links li {
         margin-right: 1.4em;
     }
@@ -1396,15 +1659,28 @@ footer {
         width: 17rem;
     }
 
-    .first {
-        width: 80px;
-        height: 80px;
+    .svg {
+        width: 110px;
     }
 
-    .sec {
-        width: 90px;
-        height: 90px;
+    .JS .svgText {
+        font-size: 1em;
     }
+
+    .premiere .svgText,
+    .authentication .svgText {
+        font-size: .9em;
+    }
+
+    .appetite .svgText {
+        font-size: 1em;
+    }
+
+    .node .svgText,
+    .API .svgText {
+        font-size: 1.15em;
+    }
+
 
     .projects {
         height: 28rem;
@@ -1446,10 +1722,15 @@ footer {
         height: 7rem;
         font-size: 1em;
     }
-
 }
 
 
 .hide {
     display: none;
+}
+
+.show {
+    left: 0%;
+    transition: left 1s ease-in-out;
+
 }
