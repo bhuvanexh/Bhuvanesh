@@ -12,6 +12,7 @@ html {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Dosis', sans-serif;
+    /* overflow-x: hidden; */
 }
 
 h1,
@@ -46,11 +47,12 @@ img {
 html,
 body {
     min-height: 150vh;
+    overflow-x: hidden;
 }
 
 body {
     background: linear-gradient(to bottom, #000000, #120a57, #672626);
-    overflow-x: hidden;
+    position: relative;
 }
 
 /* Navbar */
@@ -101,7 +103,7 @@ nav {
     width: 60%;
     aspect-ratio: 1;
     left: 32%;
-    top: -10%;
+    top: -2%;
     z-index: -11;
     opacity: .5;
     transform: rotate(45deg);
@@ -187,7 +189,7 @@ nav {
     font-size: 4.5em;
     line-height: 1.4em;
     color: aliceblue;
-    animation: musk 1s ease-in .5s 1 forwards;
+    animation: musk 1s ease-in-out .5s 1 forwards;
 
 }
 
@@ -209,7 +211,7 @@ nav {
     border-radius: 10% 10% 50% 30%;
     background-image: url(./images/MElon.png);
     background-size: cover;
-    animation: musk 1s ease-in .5s 1 forwards;
+    animation: musk 1s ease-in-out .5s 1 forwards;
 }
 
 @keyframes musk {
@@ -785,7 +787,7 @@ footer {
     }
 
     .strip {
-        top: -3%;
+        top: -1%;
     }
 
     .intro h1 {
@@ -815,10 +817,6 @@ footer {
 @media(max-width:1300px) {
     .BGI {
         width: 275px;
-    }
-
-    .strip {
-        top: -4%;
     }
 
     .intro h1 {
@@ -869,7 +867,8 @@ footer {
     }
 
     .strip {
-        top: 0%;
+        left: 30%;
+        top: 1%;
     }
 
     .MElon {
@@ -1019,7 +1018,7 @@ footer {
     }
 
     .strip {
-        left: 30%;
+        top: 0%;
     }
 
     .top {
@@ -1170,8 +1169,8 @@ footer {
     }
 
     .strip {
-        top: 2%;
-        left: 28%;
+        top: 1%;
+
     }
 
     .intro h1 {
@@ -1321,8 +1320,8 @@ footer {
     }
 
     .strip {
-        top: 4%;
-        left: 32%;
+        top: 1%;
+        left: 33%;
         width: 50%;
     }
 
@@ -1459,6 +1458,12 @@ footer {
         height: 7rem;
         font-size: 1em;
     }
+
+    .github,
+    .linkedin {
+        width: 24px;
+    }
+
 }
 
 @media(max-width:500px) {
@@ -1485,9 +1490,9 @@ footer {
     }
 
     .strip {
-        width: 80%;
-        top: -18%;
-        left: 4%;
+        width: 70%;
+        top: -3%;
+        left: 12%;
         transform: rotate(55deg);
         aspect-ratio: 3/7;
     }
@@ -1567,6 +1572,7 @@ footer {
     .footerUpper {
         flex-direction: column;
         align-items: center;
+        gap: 0.2em;
     }
 
     .projAbout {
@@ -1595,8 +1601,8 @@ footer {
 
     .strip {
         width: 75%;
-        top: -8%;
-        left: 11%;
+        top: -4%;
+        left: 8%;
         transform: rotate(55deg);
         aspect-ratio: 3/7;
     }
