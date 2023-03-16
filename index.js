@@ -87,3 +87,57 @@ window.addEventListener('scroll', () => {
         }
     })
 })
+
+
+
+const leftSlider = document.querySelector('.DleftSlider');
+const rightSlider = document.querySelector('.DrightSlider');
+
+let counter = 0;
+let arrayOfSlides = [
+    document.querySelector('#slide1')
+    , document.querySelector('#slide2')
+    , document.querySelector('#slide3')
+    , document.querySelector('#slide4')
+    , document.querySelector('#slide5')
+]
+
+const slideAssign = (counter, Danim) => {
+    arrayOfSlides.forEach(s => {
+        s.classList.add('hide');
+        arrayOfSlides[counter].classList.remove('DanimR');
+        arrayOfSlides[counter].classList.remove('DanimL');
+    })
+    arrayOfSlides[counter].classList.remove('hide');
+    arrayOfSlides[counter].classList.add(`${Danim}`);
+}
+
+rightSlider.addEventListener('click', () => {
+    console.log('rs click')
+    counter++;
+    if (counter >= 0 && counter < arrayOfSlides.length) {
+        slideAssign(counter, 'DanimR');
+    }
+    else if (counter < 0) {
+        counter = arrayOfSlides.length - 1;
+        slideAssign(counter, 'DanimR');
+    } else {
+        counter = 0;
+        slideAssign(counter, 'DanimR');
+    }
+})
+leftSlider.addEventListener('click', () => {
+    console.log('ls click')
+    counter--;
+    if (counter >= 0 && counter < arrayOfSlides.length) {
+        slideAssign(counter, 'DanimL');
+    }
+    else if (counter < 0) {
+        counter = arrayOfSlides.length - 1;
+        slideAssign(counter, 'DanimL');
+    } else {
+        counter = 0;
+        slideAssign(counter, 'DanimL');
+    }
+})
+
